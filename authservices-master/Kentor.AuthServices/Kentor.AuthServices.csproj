@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{93BA675E-A159-4701-B68B-C4B81015C556}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Kentor.AuthServices</RootNamespace>
+    <AssemblyName>Kentor.AuthServices</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\Kentor.AuthServices.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\Debug\Kentor.AuthServices.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Kentor.AuthServices.XML</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.identitymodel.services" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\VersionInfo.cs">
+      <Link>VersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="ConfiguredAndLoadedCollection.cs" />
+    <Compile Include="Internal\PathHelper.cs" />
+    <Compile Include="Internal\QueryStringHelper.cs" />
+    <Compile Include="Metadata\KeyInfoSerializer.cs" />
+    <Compile Include="Saml2P\FilteringXmlNodeReader.cs" />
+    <Compile Include="Saml2P\Saml2LogoutRequest.cs" />
+    <Compile Include="Saml2ResponseFailedValidationException.cs" />
+    <Compile Include="Internal\CryptographyExtensions.cs" />
+    <Compile Include="Internal\RSAEncryptedXml.cs" />
+    <Compile Include="WebSso\AcsCommand.cs" />
+    <Compile Include="Metadata\AttributeConsumingService.cs" />
+    <Compile Include="Configuration\RequestedAttributeElement.cs" />
+    <Compile Include="Configuration\RequestedAttributesCollection.cs" />
+    <Compile Include="Metadata\RequestedAttribute.cs" />
+    <Compile Include="Metadata\ExtendedEntitiesDescriptor.cs" />
+    <Compile Include="ICachedMetadata.cs" />
+    <Compile Include="MetadataRefreshScheduler.cs" />
+    <Compile Include="Metadata\ServiceProviderSingleSignOnDescriptorExtensions.cs" />
+    <Compile Include="Metadata\ExtendedEntityDescriptor.cs" />
+    <Compile Include="AuthServicesException.cs" />
+    <Compile Include="WebSso\AuthServicesUrls.cs" />
+    <Compile Include="BadFormatSamlResponseException.cs" />
+    <Compile Include="Metadata\ExtendedMetadataSerializer.cs" />
+    <Compile Include="ClaimsIdentityExtensions.cs" />
+    <Compile Include="WebSso\Cacheability.cs" />
+    <Compile Include="WebSso\CommandResult.cs" />
+    <Compile Include="Configuration\ContactPersonElement.cs" />
+    <Compile Include="Configuration\ContactPersonsCollection.cs" />
+    <Compile Include="Configuration\IdentityProviderDictionary.cs" />
+    <Compile Include="Configuration\MetadataElement.cs" />
+    <Compile Include="Configuration\OrganizationElement.cs" />
+    <Compile Include="Configuration\SPOptions.cs" />
+    <Compile Include="Configuration\EntityIdConverter.cs" />
+    <Compile Include="Configuration\FederationCollection.cs" />
+    <Compile Include="Configuration\IdentityProviderCollection.cs" />
+    <Compile Include="Configuration\IdentityProviderElement.cs" />
+    <Compile Include="Configuration\CertificateElement.cs" />
+    <Compile Include="Configuration\IOptions.cs" />
+    <Compile Include="Configuration\ISPOptions.cs" />
+    <Compile Include="Configuration\Options.cs" />
+    <Compile Include="Internal\DateTimeExtensions.cs" />
+    <Compile Include="Internal\EntityIdEqualityComparer.cs" />
+    <Compile Include="Internal\Enumerator.cs" />
+    <Compile Include="Metadata\ExtendedServiceProviderSingleSignOnDescriptor.cs" />
+    <Compile Include="Federation.cs" />
+    <Compile Include="Configuration\FederationElement.cs" />
+    <Compile Include="WebSso\HttpRequestData.cs" />
+    <Compile Include="IdentityProvider.cs" />
+    <Compile Include="Saml2P\ISaml2Message.cs" />
+    <Compile Include="WebSso\MessageBinder.cs" />
+    <Compile Include="Metadata\MetadatabaseExtensions.cs" />
+    <Compile Include="WebSso\MetadataCommand.cs" />
+    <Compile Include="Metadata\MetadataLoader.cs" />
+    <Compile Include="Saml2P\Saml2PSecurityTokenHandler.cs" />
+    <Compile Include="NoSamlResponseFoundException.cs" />
+    <Compile Include="WebSso\NotFoundCommand.cs" />
+    <Compile Include="WebSso\ICommand.cs" />
+    <Compile Include="WebSso\CommandFactory.cs" />
+    <Compile Include="StoredRequestState.cs" />
+    <Compile Include="Internal\PendingAuthnRequests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Internal\ReturnRequestedIssuerNameRegistry.cs" />
+    <Compile Include="Saml2AssertionExtensions.cs" />
+    <Compile Include="Saml2StatementExtension.cs" />
+    <Compile Include="Configuration\KentorAuthServicesSection.cs" />
+    <Compile Include="Saml2P\Saml2AuthenticationRequest.cs" />
+    <Compile Include="WebSso\Saml2Binding.cs" />
+    <Compile Include="WebSso\Saml2BindingType.cs" />
+    <Compile Include="Saml2ConditionsExtensions.cs" />
+    <Compile Include="Saml2Namespaces.cs" />
+    <Compile Include="WebSso\Saml2PostBinding.cs" />
+    <Compile Include="WebSso\Saml2RedirectBinding.cs" />
+    <Compile Include="Saml2P\Saml2RequestBase.cs" />
+    <Compile Include="Saml2P\Saml2Response.cs" />
+    <Compile Include="Saml2P\Saml2StatusCode.cs" />
+    <Compile Include="Saml2SubjectExtensions.cs" />
+    <Compile Include="Metadata\SPOptionsExtensions.cs" />
+    <Compile Include="WebSso\SignInCommand.cs" />
+    <Compile Include="Internal\StatusCodeHelper.cs" />
+    <Compile Include="Internal\StringHelpers.cs" />
+    <Compile Include="WebSso\SingleSignoutCommand.cs" />
+    <Compile Include="XmlDocumentExtensions.cs" />
+    <Compile Include="Metadata\FilteringXmlDictionaryReader.cs" />
+    <Compile Include="Internal\XmlHelpers.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="..\CustomDictionary.xml">
+      <link>CustomDictionary.xml</link>
+    </CodeAnalysisDictionary>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
